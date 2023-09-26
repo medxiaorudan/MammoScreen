@@ -117,6 +117,6 @@ class ImageLabelerApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    history_file='C:\postdoc\data\survival_data\history_label.txt'
+    history_file='The path to save the file where you store the label information'
     app = ImageLabelerApp(root,history_file)
     root.mainloop()
