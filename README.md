@@ -34,7 +34,10 @@ python MammoScreen.py
 
 2. Use the "Load Images" button to select a directory containing the images you want to label.
 3. Label the images using the 'Y' or 'N' buttons.
-4. Once done, click on the "Finish Labeling" button to save the labels.
+<p float="left">
+  <img src="images/image1.png" width="300" />
+</p>
+5. Once done, click on the "Finish Labeling" button to save the labels.
 
 ## Contributing
 
