@@ -14,11 +14,11 @@ MammoScreenApp is a simple image labeler application designed to assist users in
 
 1. Clone the repository:
 ```
-git clone [[repository-url](https://github.com/medxiaorudan/MammoScreen.git)]
+git clone https://github.com/medxiaorudan/MammoScreen.git
 ```
 2. Navigate to the repository directory:
 ```
-cd  [MammoScreen]
+cd  MammoScreen
 ```
 3. Install the required packages:
 ```
