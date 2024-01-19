@@ -47,3 +47,18 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
++------------------------+    +----------------------+    +----------------------+
+|   Preprocess with LLM  | -> |   Improved Code      | -> |  Feedback to LLM    |
++------------------------+    | Generation based on |    |  (VCs and Analysis) |
+             |                 | Feedback from Frama- |    |                      |
+             v                 | C and LLM            |    +----------------------+
++------------------------+    +----------------------+    +----------------------+
+|        Frama-C         | <- |   Training Results   | <- |    PPO Training     |
+|    Static Analysis     |    |    from PPO           |    |                      |
+|                        |    +----------------------+    +----------------------+
++------------------------+             |                      |
+             |                         v                      |
+             |             +----------------------+          |
+             +------------>| Improved Environment | <--------+
+                           | and Policy from PPO  |
+                           +----------------------+
