@@ -47,23 +47,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
-+---------------------+    +----------------------+    +-----------------------+
-| Preprocess with LLM | -> | Initial Code Metrics | -> | Initial Code Generation|
-+---------------------+    +----------------------+    +-----------------------+
-             |                   |                         |
-             v                   v                         v
-+---------------------+    +----------------------+    +-----------------------+
-|      Frama-C        | -> |  Verification      | -> |   Feedback to LLM     |
-|   Static Analysis   |    | Conditions, IR,     |    |   (VCs and Analysis)  |
-|                     |    | Code Metrics,        |    |                       |
-|                     |    | Runtime Error       |    |                       |
-+---------------------+    | Reports              |    +-----------------------+
-             |                   |                         |
-             v                   v                         v
-+---------------------+    +----------------------+    +-----------------------+
-| LLM Analysis &      | <- |  Improved Code      | <- |  Improved Code        |
-| Constraint Refinement|    | Generation based on |    |  based on Feedback    |
-|                     |    | Feedback from Frama-|    |  from Frama-C         |
-+---------------------+    | C and LLM           |    |  and LLM              |
-                           +----------------------+    +-----------------------+
