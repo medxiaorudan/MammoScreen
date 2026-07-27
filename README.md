@@ -1,64 +1,59 @@
-# MammoScreenApp
+# MammoScreen
 
-MammoScreenApp is a simple image labeler application designed to assist users in labeling images, especially medical images in DICOM format. The application provides a GUI interface for loading, viewing, and labeling images.
+MammoScreen is a browser-based Streamlit application for reviewing and labeling mammography images, including DICOM uploads processed fully in memory.
 
 ## Features
 
-- Load images from a directory.
-- Support for common image formats (JPG, JPEG, PNG, BMP) and DICOM format.
-- Label images as 'Y' or 'N'.
-- Save labeling history to a file.
-- Simple and intuitive GUI interface.
+- Upload `JPG`, `JPEG`, `PNG`, `BMP`, and `DICOM` files from the browser
+- View one image at a time with previous/next navigation
+- Label images as `Positive`, `Negative`, `Uncertain`, or `Skip`
+- Edit earlier labels and add optional notes
+- Export labels as CSV
+- Keep uploaded data in session memory instead of writing it to disk
 
-## Installation
+## Project Layout
 
-1. Clone the repository:
+```text
+MammoScreen/
+├── app.py
+├── src/
+├── tests/
+├── sample_data/
+├── legacy/
+├── .streamlit/
+├── Dockerfile
+└── docker-compose.yml
 ```
-git clone https://github.com/medxiaorudan/MammoScreen.git
-```
-2. Navigate to the repository directory:
-```
-cd  MammoScreen
-```
-3. Install the required packages:
-```
+
+The original Tkinter desktop application is preserved in `legacy/MammoScreen.py`.
+
+## Local Development
+
+```bash
 pip install -r requirements.txt
+streamlit run app.py
 ```
 
-## Usage
+The app will open on `http://localhost:8501`.
 
-1. Run the script:
-```
-python MammoScreen.py
+## Testing
+
+```bash
+pytest
 ```
 
-2. Use the "Load Images" button to select a directory containing the images you want to label.
-3. Label the images using the 'Y' or 'N' buttons.
+## Docker
+
+```bash
+docker compose up --build
+```
+
+## Screenshot
+
 <p float="left">
   <img src="./images/image1.PNG" width="500" />
 </p>
-5. Once done, click on the "Finish Labeling" button to save the labels.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-+------------------------+    +----------------------+    +----------------------+
-|   Preprocess with LLM  | -> |   Improved Code      | -> |  Feedback to LLM    |
-+------------------------+    | Generation based on |    |  (VCs and Analysis) |
-             |                 | Feedback from Frama- |    |                      |
-             v                 | C and LLM            |    +----------------------+
-+------------------------+    +----------------------+    +----------------------+
-|        Frama-C         | <- |   Training Results   | <- |    PPO Training     |
-|    Static Analysis     |    |    from PPO           |    |                      |
-|                        |    +----------------------+    +----------------------+
-+------------------------+             |                      |
-             |                         v                      |
-             |             +----------------------+          |
-             +------------>| Improved Environment | <--------+
-                           | and Policy from PPO  |
-                           +----------------------+
